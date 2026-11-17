@@ -1,0 +1,5 @@
+openai>=2.0
+keyring>=25.0
+pyinstaller>=6.0
+sounddevice>=0.5
+numpy>=1.26

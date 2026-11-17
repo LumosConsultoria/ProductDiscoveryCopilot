@@ -1,0 +1,26 @@
+# Python and editor files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Local credentials and user discovery data
+.env
+.env.*
+settings.json
+*.key
+*.pem
+*.wav
+*.mp3
+data/
+
+# Build artifacts and local logs
+build/
+dist/
+*.spec
+build_log.txt
+*.log
+.DS_Store
