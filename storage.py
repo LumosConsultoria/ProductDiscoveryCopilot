@@ -39,7 +39,7 @@ def _write_index(items):
 
 def _validate_discovery_id(discovery_id):
     """Reject path separators and traversal in user-supplied discovery identifiers."""
-    if not isinstance(discovery_id, str) or not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,100}", discovery_id):
+    if not isinstance(discovery_id, str) or not re.fullmatch(r"[^\W_][\w-]{0,100}", discovery_id):
         raise ValueError("Invalid discovery ID")
     return discovery_id
 
