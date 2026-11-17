@@ -23,6 +23,10 @@ class StorageTests(unittest.TestCase):
         self.assertEqual(loaded["title"], "Sample Discovery")
         self.assertEqual(len(storage.list_discoveries()), 1)
 
+    def test_unicode_discovery_title_roundtrip(self):
+        item = storage.save_discovery("Adoção tecnológica", "Demo", "Example", [])
+        self.assertEqual(storage.load_discovery(item["id"])["title"], "Adoção tecnológica")
+
     def test_rejects_path_traversal_on_load(self):
         for value in ["../secret", "../../outside", "foo/bar", "foo\\bar", ""]:
             with self.subTest(value=value), self.assertRaises(ValueError):
